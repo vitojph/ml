@@ -17,7 +17,9 @@ figure; % open a new figure window
 %       markers larger by using plot(..., 'rx', 'MarkerSize', 10);
 
 
-
+plot(x, y, 'rx', 'MarkerSize', 10);     % plot the data
+ylabel('Profit in US$ 10k')             % set the y-axis label
+xlabel('Population of the city in 10k') % set the y-axis label
 
 
 % ============================================================
