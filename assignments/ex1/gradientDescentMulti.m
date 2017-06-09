@@ -17,6 +17,20 @@ for iter = 1:num_iters
     %       of the cost function (computeCostMulti) and gradient here.
     %
 
+    % compute the hypothesis, by multiplying X and theta in 
+    % the proper order so that the inner dimensions match
+    h = X * theta;
+    % compute the error
+    e = h - y;
+    % the gradient (change in theta) is the sum of the product 
+    % of X and the error vector, scaled by alpha and 1/m
+    theta_change = alpha * 1/m * (X' * e);
+    theta = theta - theta_change;
+
+    % Save the cost J in every iteration    
+    J_history(iter) = computeCost(X, y, theta);
+
+
 
 
 
