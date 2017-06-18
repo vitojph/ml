@@ -27,7 +27,7 @@ J = 1/m * sum( -y .* log(h) - (1-y) .* log(1-h) );
 
 % compute the gradient
 %grad = 1/m * sum( X' * err);
-grad = 1/m .* (h - y);
+grad = 1/m .*  X' * (h - y);
 
 % =============================================================
 
