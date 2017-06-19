@@ -19,8 +19,20 @@ grad = zeros(size(theta));
 
 
 
+% compute the hypothesis using the sigmoid function
+h = sigmoid(X * theta);
 
+% computes the regularization
+regularization = lambda / (2*m) * (theta' * theta - theta(1)^2);
 
+% compute the cost in logistic regression 
+J = 1/m * sum( -y .* log(h) - (1 - y) .* log(1 - h) ) + regularization;
+%J = 1/m * (-y' * log(h) - (1-y') * log(1-h)) + regularization;
+
+% compute the gradient
+mask = ones(size(theta));
+mask(1) = 0;
+grad = 1/m * X' * (h - y) + lambda / m * (theta .* mask);
 
 % =============================================================
 
