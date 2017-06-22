@@ -36,13 +36,14 @@ grad = zeros(size(theta));
 %           grad = grad + YOUR_CODE_HERE (using the temp variable)
 %
 
+% compute the hypothesis using the sigmoid function
+h = sigmoid(X * theta');
 
+% compute the cost in logistic regression 
+J = 1/m * sum(-y .* log(h) - (1 - y) .* log(1 - h));
 
-
-
-
-
-
+% compute the gradient
+grad = 1/m .*  X' * (h - y);
 
 
 % =============================================================
