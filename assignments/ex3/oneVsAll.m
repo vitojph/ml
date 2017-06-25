@@ -58,18 +58,8 @@ for c = 1:num_labels
   % This function will return theta and the cost 
   [theta] = fmincg (@(t)(lrCostFunction(t, X, (y == c), lambda)), initial_theta, options);
   all_theta(c, :) = theta';
-endfor
-
-
-
-
-
-
-
-
-
+end
 
 % =========================================================================
-
 
 end

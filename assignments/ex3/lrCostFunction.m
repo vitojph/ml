@@ -45,7 +45,6 @@ J = 1/m * sum(-y .* log(h) - (1 - y) .* log(1 - h));
 % compute the gradient
 grad = 1/m .*  X' * (h - y);
 
-
 % regularized cost function
 J = J + (lambda / (2 * m)) * sum(theta(2:end) .^ 2);
 

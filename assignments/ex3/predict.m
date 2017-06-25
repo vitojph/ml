@@ -21,15 +21,22 @@ p = zeros(size(X, 1), 1);
 %       can use max(A, [], 2) to obtain the max for each row.
 %
 
+% add ones to the X data matrix
+X = [ones(m, 1) X];
 
-
-
-
-
-
-
+% loop over X
+for i = 1:m
+    % a1 has to be a 400x1 vector 
+    a1 = X(i, :)';
+    % the hidden layer a2 has a column of 1s and is computed using Theta1
+    a2 = [1; sigmoid(Theta1 * a1)];
+    % the output layer a3 is computed using Theta2 
+    a3 = sigmoid(Theta2 * a2);
+    % get the max value of idx: that's the predicted class
+    [m, idx] = max(a3');
+    p(i) = idx;
+end;
 
 % =========================================================================
-
 
 end
