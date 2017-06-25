@@ -30,10 +30,11 @@ X = [ones(m, 1) X];
 %       for each row.
 %       
 
+% return the max column of the multiplication of X and all_theta
+% m is the maximum value
+% p is its index
 
-
-
-
+[m, p] = max(sigmoid(X * all_theta'), [], 2);
 
 
 % =========================================================================
